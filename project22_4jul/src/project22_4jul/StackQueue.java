@@ -23,11 +23,11 @@ public class StackQueue {
         return e;
     }
 
-    public synchronized void enqueue(int element) throws InterruptedException {
+    public synchronized void enqueue(int e) throws InterruptedException {
         while (!stack.isEmpty()) {
             wait();
         }
-        queue.offer(element);
+        queue.offer(e);
     }
 
     public synchronized int dequeue() throws InterruptedException {
