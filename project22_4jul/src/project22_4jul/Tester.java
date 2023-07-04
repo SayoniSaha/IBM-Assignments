@@ -11,12 +11,28 @@ public class Tester {
 //		t2.start();
 		
 //		Queue
-		MyQueue myQueue = new MyQueue();
+//		MyQueue myQueue = new MyQueue();
+//
+//      Thread t1 = new Thread(new TestQueue(myQueue));
+//      t1.start();
+//
+//      Thread t2 = new Thread(new TestQueue(myQueue));
+//      t2.start();
 
-        Thread t1 = new Thread(new TestQueue(myQueue));
+		
+//      StackQueue
+        StackQueue sq = new StackQueue();
+        Thread t1 = new Thread(() -> {
+            try {
+                int e = 1;
+                sq.push(e);
+                sq.pop();
+                sq.enqueue(e);
+                sq.dequeue();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
         t1.start();
-
-        Thread t2 = new Thread(new TestQueue(myQueue));
-        t2.start();
 	}
 }
