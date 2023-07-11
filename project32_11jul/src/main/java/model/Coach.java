@@ -1,6 +1,11 @@
 package model;
 
-public interface Coach {	
-	public String getDailyWorkOut();
+import org.springframework.stereotype.Component;
+
+@Component
+public interface Coach {
+	
+	public String getDailyWorkOut();	
+	public String getDailyFortune();
 
 }

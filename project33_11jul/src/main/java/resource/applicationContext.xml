@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean name="myFortuneService" class="model.SadFortuneService"></bean>
+
+<bean name="p" class="model.Person">
+	<constructor-arg name="firstName" value="ab"/>
+	<constructor-arg name="lastName" value="cd"/>
+	<constructor-arg name="address" ref="a"/>
+</bean>
+
+<bean name="a" class="model.Address">
+    <constructor-arg name="line1" value="Kolkata"/>
+    <constructor-arg name="line2" value="India"/>
+</bean>
+
+</beans>

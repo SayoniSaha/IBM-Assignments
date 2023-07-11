@@ -1,10 +1,25 @@
 package model;
 
-public class BasketBallCoach implements Coach{
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-	@Override
-	public String getDailyWorkOut() {
-		return "practice";
-	}
+@Component
+public class BasketBallCoach implements Coach {
 
+    private FortuneService fortuneService;
+
+    @Autowired
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
+    @Override
+    public String getDailyWorkOut() {
+        return "Workout";
+    }
+
+    @Override
+    public String getDailyFortune() {
+        return fortuneService.getDailyFortune();
+    }
 }
