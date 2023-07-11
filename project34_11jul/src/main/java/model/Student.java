@@ -24,6 +24,11 @@ public class Student {
 		this.id = id;
 	}
 	
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", id=" + id + "]";
+	}
+	
 	@PostConstruct
     public void initStudent() {
         System.out.println("Init Method");
